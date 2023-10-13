@@ -86,7 +86,6 @@ function averageNumbers(arrNum) {
   }
   return sum / arrNum.length;
 }
-console.log(averageNumbers(numbersAvg));
 
 // Level 2: Array of strings
 const wordsArr = [
@@ -115,8 +114,25 @@ function averageWordLength(arrWords) {
 }
 console.log(averageWordLength(wordsArr));
 
-// Bonus - Iteration #4.1
-function avg() {}
+// Bonus - Iteration #4.3
+function avg(arr) {
+  if (arr.length === 0) {
+    result = null;
+  }
+  let result = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === "number") {
+      result += arr[i];
+    } else if (typeof arr[i] === "string") {
+      result += arr[i].length;
+    } else if (typeof arr[i] === "bolean") {
+      if (arr[i] === true) {
+        result++;
+      }
+    }
+  }
+  return result / arr.length;
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
